@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- INSPIRED BY DAVID WALSH SIMPLE FLIPPING ANIMATION: http://davidwalsh.name/css-card SEPT 24 2012 -->
+
+	<meta charset="utf-8" />
+	<title>One Page Business Card</title>
+	<style>
+
+		body {
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: 800;
+		color: #000;
+		background-color: #009BD5;
+		text-transform:lowercase;
+		}
+		
+		a { color: #009BD5; text-decoration: none;}
+		
+		.card-container {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			perspective: 1000;
+		}
+			
+		.card-container:hover .container, .card-container.hover .container {
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}
+
+		.card-container {
+			position: absolute;
+			width: 450px;
+			height: 290px;
+			margin-left: -225px;
+			margin-top: -145px;
+			top: 50%;
+			left: 50%;
+		}
+		
+		
+		.front, .back {
+			width: 410px;
+			height: 250px;
+			padding: 20px;
+			-webkit-box-shadow:  0px 0px 100px 15px rgba(255, 255, 255, 0.2);
+	        box-shadow:  0px 0px 100px 15px rgba(255, 255, 255, 0.2);
+		}
+
+		.container {
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+
+			-moz-transition: 0.6s;
+			-moz-transform-style: preserve-3d;
+
+			transition: 0.6s;
+			transform-style: preserve-3d;
+
+			position: relative;
+
+		}
+
+		.front, .back {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.front {
+			background: #fff;
+			z-index: 2;
+		}
+
+		.back {
+			background: #fff;
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}
+
+		p {
+			margin:0 0 0.25em;
+			line-height:1.25em;
+		}
+		
+		h1 {
+			font-size: 1em;
+			margin: 0 0 8.5em;
+		}
+	
+	</style>
+</head>
+<body>
+
+<div class="card-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="container">
+    <div class="front">
+    	<h1>tjhole</h1>
+    </div>
+    <div class="back">
+    <h1>info</h1>
+	<p>Email <a href="mailto:info@tjhole.com">info@tjhole.com</a></p>
+	<p>Google Chat <a href="gtalk:chat?jid=tomhole@gmail.com">tomhole@</a></p>
+	<p>Skype <a href="skype:t.j.hole?call">t.j.hole</a></p>
+	<p>Tweet <a href="http://www.twitter.com/tjhole" target="new">@tjhole</a></p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
